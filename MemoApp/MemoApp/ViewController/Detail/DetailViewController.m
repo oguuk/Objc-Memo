@@ -7,6 +7,7 @@
 
 #import "DetailViewController.h"
 #import "ComposeViewController.h"
+#import "DataManager.h"
 
 @interface DetailViewController () <UITableViewDataSource>
 
@@ -69,7 +70,8 @@
     UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"삭제 확인" message:@"메모를 삭제할까요?" preferredStyle:UIAlertControllerStyleAlert];
     
     UIAlertAction* okAction = [UIAlertAction actionWithTitle:@"삭제" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
-        
+        [[DataManager sharedInstance] deleteMemo:self.memo];
+        [self.navigationController popViewControllerAnimated:YES];
     }];
     UIAlertAction* cancelAction = [UIAlertAction actionWithTitle:@"취소" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
         
