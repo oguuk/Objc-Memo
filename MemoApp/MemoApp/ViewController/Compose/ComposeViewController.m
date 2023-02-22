@@ -16,10 +16,35 @@
 
 @property (weak, nonatomic) IBOutlet UITextView *memoTextView;
 
+@property (strong, nonatomic) id willShowToken;
+@property (strong, nonatomic) id willHideToken;
+
 
 @end
 
 @implementation ComposeViewController
+
+- (void) dealloc {
+    if (self.willShowToken) {
+        [[NSNotificationCenter defaultCenter] removeObserver:self.willShowToken];
+    }
+    
+    if (self.willHideToken) {
+        [[NSNotificationCenter defaultCenter] removeObserver:self.willHideToken];
+    }
+}
+
+- (void) viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    
+    [self.memoTextView becomeFirstResponder];
+}
+
+- (void)viewWillDisappear:(BOOL)animated {
+    [super viewWillDisappear:animated];
+    
+    [self.memoTextView resignFirstResponder];
+}
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -31,6 +56,32 @@
         self.navigationItem.title = @"새 메모";
         self.memoTextView.text = nil;
     }
+    
+    self.willShowToken = [[NSNotificationCenter defaultCenter] addObserverForName:UIKeyboardWillShowNotification object:nil queue:[NSOperationQueue mainQueue] usingBlock:^(NSNotification * _Nonnull note) {
+        CGFloat height = [note.userInfo[UIKeyboardFrameEndUserInfoKey] CGRectValue].size.height;
+        
+        UIEdgeInsets inset = self.memoTextView.contentInset;
+        inset.bottom = height;
+        self.memoTextView.contentInset = inset;
+        
+        inset = self.memoTextView.scrollIndicatorInsets;
+        inset.bottom = height;
+        self.memoTextView.scrollIndicatorInsets = inset;
+    }];
+    
+    self.willHideToken = [[NSNotificationCenter defaultCenter]
+                          addObserverForName:UIKeyboardWillHideNotification
+                          object:nil
+                          queue:[NSOperationQueue mainQueue]
+                          usingBlock:^(NSNotification * _Nonnull note) {
+        UIEdgeInsets inset = self.memoTextView.contentInset;
+        inset.bottom = 0;
+        self.memoTextView.contentInset = inset;
+        
+        inset = self.memoTextView.scrollIndicatorInsets;
+        inset.bottom = 0;
+        self.memoTextView.scrollIndicatorInsets = inset;
+    }];
 }
 
 /*
