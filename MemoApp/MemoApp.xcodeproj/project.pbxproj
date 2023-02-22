@@ -14,6 +14,7 @@
 		96D9C3DA29A59F8E00089E21 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 96D9C3D929A59F8E00089E21 /* Assets.xcassets */; };
 		96D9C3DD29A59F8E00089E21 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 96D9C3DB29A59F8E00089E21 /* LaunchScreen.storyboard */; };
 		96D9C3E029A59F8E00089E21 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 96D9C3DF29A59F8E00089E21 /* main.m */; };
+		96D9C3E929A5A3BF00089E21 /* Memo.m in Sources */ = {isa = PBXBuildFile; fileRef = 96D9C3E829A5A3BF00089E21 /* Memo.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -28,6 +29,8 @@
 		96D9C3DC29A59F8E00089E21 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		96D9C3DE29A59F8E00089E21 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		96D9C3DF29A59F8E00089E21 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		96D9C3E729A5A3BF00089E21 /* Memo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Memo.h; sourceTree = "<group>"; };
+		96D9C3E829A5A3BF00089E21 /* Memo.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Memo.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +63,7 @@
 		96D9C3C929A59F8C00089E21 /* MemoApp */ = {
 			isa = PBXGroup;
 			children = (
+				96D9C3E629A5A39600089E21 /* Model */,
 				96D9C3CA29A59F8C00089E21 /* AppDelegate.h */,
 				96D9C3CB29A59F8C00089E21 /* AppDelegate.m */,
 				96D9C3CD29A59F8C00089E21 /* SceneDelegate.h */,
@@ -72,6 +76,15 @@
 				96D9C3D629A59F8C00089E21 /* MemoApp.xcdatamodeld */,
 			);
 			path = MemoApp;
+			sourceTree = "<group>";
+		};
+		96D9C3E629A5A39600089E21 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				96D9C3E729A5A3BF00089E21 /* Memo.h */,
+				96D9C3E829A5A3BF00089E21 /* Memo.m */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -144,6 +157,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				96D9C3E929A5A3BF00089E21 /* Memo.m in Sources */,
 				96D9C3E029A59F8E00089E21 /* main.m in Sources */,
 				96D9C3CC29A59F8C00089E21 /* AppDelegate.m in Sources */,
 				96D9C3CF29A59F8C00089E21 /* SceneDelegate.m in Sources */,
