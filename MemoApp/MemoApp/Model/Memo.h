@@ -1,12 +1,12 @@
-////
-////  Memo.h
-////  MemoApp
-////
-////  Created by 오국원 on 2023/02/22.
-////
 //
-//#import <Foundation/Foundation.h>
+//  Memo.h
+//  MemoApp
 //
+//  Created by 오국원 on 2023/02/22.
+//
+
+#import <Foundation/Foundation.h>
+
 //NS_ASSUME_NONNULL_BEGIN
 //
 //@interface Memo : NSObject

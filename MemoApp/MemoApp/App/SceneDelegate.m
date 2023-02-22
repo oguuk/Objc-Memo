@@ -7,6 +7,7 @@
 
 #import "SceneDelegate.h"
 #import "AppDelegate.h"
+#import "Memo+CoreDataProperties.h"
 
 @interface SceneDelegate ()
 
@@ -54,7 +55,7 @@
     // to restore the scene back to its current state.
 
     // Save changes in the application's managed object context when the application transitions to the background.
-    //[(AppDelegate *)UIApplication.sharedApplication.delegate saveContext];
+    // [(AppDelegate *)UIApplication.sharedApplication.delegate saveContext];
 }
 
 

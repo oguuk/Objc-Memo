@@ -6,6 +6,7 @@
 //
 
 #import "DataManager.h"
+#import "Memo+CoreDataProperties.h"
 
 @implementation DataManager
 
@@ -28,6 +29,14 @@
     NSError* error = nil;
     NSArray* result = [self.mainContext executeFetchRequest:request error:&error];
     [self.memoList setArray:result];
+}
+
+- (void)addNewMemo:(NSString*)memo {
+    Memo* newMemo  = [[Memo alloc] initWithContext: self.mainContext];
+    newMemo.content = memo;
+    newMemo.insertDate = [NSDate date];
+    
+    [self saveContext];
 }
 
 - (NSManagedObjectContext*)mainContext {

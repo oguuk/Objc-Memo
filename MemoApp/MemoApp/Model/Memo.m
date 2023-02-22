@@ -1,12 +1,12 @@
-////
-////  Memo.m
-////  MemoApp
-////
-////  Created by 오국원 on 2023/02/22.
-////
 //
-//#import "Memo.h"
+//  Memo.m
+//  MemoApp
 //
+//  Created by 오국원 on 2023/02/22.
+//
+
+#import "Memo.h"
+
 //@implementation Memo
 //
 //static NSMutableArray* _dummyMemoList = nil;

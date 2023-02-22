@@ -6,6 +6,7 @@
 //
 
 #import "AppDelegate.h"
+#import "Memo+CoreDataProperties.h"
 
 @interface AppDelegate ()
 
