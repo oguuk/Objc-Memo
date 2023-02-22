@@ -185,6 +185,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="메모 보기" id="iNo-cm-hGg"/>
+                    <connections>
+                        <outlet property="memoTableView" destination="o8q-Ps-mmN" id="3dp-6n-I1i"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9e4-bN-bv8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
