@@ -11,7 +11,7 @@
         <!--새 메모-->
         <scene sceneID="qD5-j3-ckc">
             <objects>
-                <viewController id="o90-fD-I4I" sceneMemberID="viewController">
+                <viewController id="o90-fD-I4I" customClass="ComposeViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qKb-RC-CIR">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
