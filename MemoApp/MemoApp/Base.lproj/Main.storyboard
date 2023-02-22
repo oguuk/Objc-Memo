@@ -8,17 +8,36 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--새 메모-->
         <scene sceneID="qD5-j3-ckc">
             <objects>
                 <viewController id="o90-fD-I4I" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qKb-RC-CIR">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Igk-UE-GNM">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="XW0-40-1Ai"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Igk-UE-GNM" firstAttribute="trailing" secondItem="XW0-40-1Ai" secondAttribute="trailing" id="5vD-VY-8kq"/>
+                            <constraint firstItem="Igk-UE-GNM" firstAttribute="bottom" secondItem="XW0-40-1Ai" secondAttribute="bottom" id="6Xo-aM-qsD"/>
+                            <constraint firstItem="Igk-UE-GNM" firstAttribute="leading" secondItem="XW0-40-1Ai" secondAttribute="leading" id="h5g-VF-8pB"/>
+                            <constraint firstItem="Igk-UE-GNM" firstAttribute="top" secondItem="qKb-RC-CIR" secondAttribute="top" id="ulx-0b-W1h"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="2Zy-QA-hhW"/>
+                    <navigationItem key="navigationItem" title="새 메모" id="2Zy-QA-hhW">
+                        <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="hYZ-wg-SfR"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="JXU-RY-0DK"/>
+                    </navigationItem>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g35-Y5-Zrs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -111,6 +130,9 @@
         </scene>
     </scenes>
     <resources>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
