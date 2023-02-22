@@ -162,6 +162,10 @@
                                         </tableViewCellContentView>
                                     </tableViewCell>
                                 </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="x7F-vu-wex" id="ggB-Sh-oVE"/>
+                                    <outlet property="delegate" destination="x7F-vu-wex" id="dtM-hq-5aW"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="OmP-ir-t2h"/>
