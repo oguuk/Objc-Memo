@@ -6,6 +6,7 @@
 //
 
 #import "DetailViewController.h"
+#import "ComposeViewController.h"
 
 @interface DetailViewController () <UITableViewDataSource>
 
@@ -30,6 +31,11 @@
         return cell;
     }
     return  [[UITableViewCell alloc] init];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    ComposeViewController* vc = [[segue.destinationViewController childViewControllers] objectAtIndex:0];
+    vc.editTarget = self.memo;
 }
 
 - (void)viewDidLoad {
