@@ -109,17 +109,38 @@
             </objects>
             <point key="canvasLocation" x="-253" y="53"/>
         </scene>
-        <!--Detail View Controller-->
+        <!--메모 보기-->
         <scene sceneID="vvh-6V-DnJ">
             <objects>
                 <viewController id="x7F-vu-wex" customClass="DetailViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="4Z0-9o-zPZ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9sc-Oe-oLg">
+                                <rect key="frame" x="0.0" y="813" width="414" height="49"/>
+                                <items>
+                                    <barButtonItem title="Item" id="fxP-AL-bIV"/>
+                                </items>
+                            </toolbar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="o8q-Ps-mmN">
+                                <rect key="frame" x="0.0" y="140" width="414" height="673"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                            </tableView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="OmP-ir-t2h"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="9sc-Oe-oLg" firstAttribute="bottom" secondItem="OmP-ir-t2h" secondAttribute="bottom" id="036-Ma-oV3"/>
+                            <constraint firstItem="9sc-Oe-oLg" firstAttribute="top" secondItem="o8q-Ps-mmN" secondAttribute="bottom" id="BVT-j8-MPq"/>
+                            <constraint firstItem="9sc-Oe-oLg" firstAttribute="trailing" secondItem="OmP-ir-t2h" secondAttribute="trailing" id="NYl-hW-CSl"/>
+                            <constraint firstItem="o8q-Ps-mmN" firstAttribute="top" secondItem="OmP-ir-t2h" secondAttribute="top" id="lpq-DO-RkE"/>
+                            <constraint firstItem="o8q-Ps-mmN" firstAttribute="leading" secondItem="OmP-ir-t2h" secondAttribute="leading" id="rgT-0y-C9W"/>
+                            <constraint firstItem="OmP-ir-t2h" firstAttribute="trailing" secondItem="o8q-Ps-mmN" secondAttribute="trailing" id="v4K-Sa-M7r"/>
+                            <constraint firstItem="9sc-Oe-oLg" firstAttribute="leading" secondItem="OmP-ir-t2h" secondAttribute="leading" id="x7k-Ev-Ji1"/>
+                        </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="6hM-wk-Y08"/>
+                    <navigationItem key="navigationItem" title="메모 보기" id="iNo-cm-hGg"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9e4-bN-bv8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

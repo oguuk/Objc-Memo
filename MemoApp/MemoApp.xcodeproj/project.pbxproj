@@ -17,7 +17,7 @@
 		96D9C3E929A5A3BF00089E21 /* Memo.m in Sources */ = {isa = PBXBuildFile; fileRef = 96D9C3E829A5A3BF00089E21 /* Memo.m */; };
 		96D9C3F329A5A7B900089E21 /* MemoListTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96D9C3F229A5A7B900089E21 /* MemoListTableViewController.m */; };
 		96D9C3F629A5B08E00089E21 /* ComposeViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96D9C3F529A5B08E00089E21 /* ComposeViewController.m */; };
-		96D9C3FC29A5B83D00089E21 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96D9C3FB29A5B83D00089E21 /* DetailViewController.m */; };
+		96D9C3FF29A5B8A000089E21 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 96D9C3FE29A5B8A000089E21 /* DetailViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,8 +38,8 @@
 		96D9C3F229A5A7B900089E21 /* MemoListTableViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MemoListTableViewController.m; sourceTree = "<group>"; };
 		96D9C3F429A5B08E00089E21 /* ComposeViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ComposeViewController.h; sourceTree = "<group>"; };
 		96D9C3F529A5B08E00089E21 /* ComposeViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ComposeViewController.m; sourceTree = "<group>"; };
-		96D9C3FA29A5B83D00089E21 /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
-		96D9C3FB29A5B83D00089E21 /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		96D9C3FD29A5B8A000089E21 /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		96D9C3FE29A5B8A000089E21 /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -128,8 +128,8 @@
 		96D9C3F929A5B82B00089E21 /* Detail */ = {
 			isa = PBXGroup;
 			children = (
-				96D9C3FA29A5B83D00089E21 /* DetailViewController.h */,
-				96D9C3FB29A5B83D00089E21 /* DetailViewController.m */,
+				96D9C3FD29A5B8A000089E21 /* DetailViewController.h */,
+				96D9C3FE29A5B8A000089E21 /* DetailViewController.m */,
 			);
 			path = Detail;
 			sourceTree = "<group>";
@@ -207,7 +207,7 @@
 				96D9C3E929A5A3BF00089E21 /* Memo.m in Sources */,
 				96D9C3F329A5A7B900089E21 /* MemoListTableViewController.m in Sources */,
 				96D9C3E029A59F8E00089E21 /* main.m in Sources */,
-				96D9C3FC29A5B83D00089E21 /* DetailViewController.m in Sources */,
+				96D9C3FF29A5B8A000089E21 /* DetailViewController.m in Sources */,
 				96D9C3CC29A59F8C00089E21 /* AppDelegate.m in Sources */,
 				96D9C3F629A5B08E00089E21 /* ComposeViewController.m in Sources */,
 				96D9C3CF29A59F8C00089E21 /* SceneDelegate.m in Sources */,
