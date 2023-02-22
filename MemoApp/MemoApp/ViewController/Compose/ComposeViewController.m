@@ -6,10 +6,14 @@
 //
 
 #import "ComposeViewController.h"
+#import "Memo.h"
 
 @interface ComposeViewController ()
 
 - (IBAction)close:(id)sender;
+- (IBAction)save:(id)sender;
+
+@property (weak, nonatomic) IBOutlet UITextView *memoTextView;
 
 
 @end
@@ -30,6 +34,15 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+- (IBAction)save:(id)sender {
+    NSString* memo = self.memoTextView.text;
+    
+    Memo* newMemo = [[Memo alloc] initWithContent:memo];
+    [[Memo dummyMemoList] addObject:newMemo];
+    
+    [self dismissViewControllerAnimated:YES completion:nil];
+}
 
 - (IBAction)close:(id)sender {
     

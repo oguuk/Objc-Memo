@@ -16,7 +16,8 @@ NS_ASSUME_NONNULL_BEGIN
 
 - (instancetype)initWithContent:(NSString*)content;
 
-+ (NSArray*)dummyMemoList;
+//+ (NSMutableArray*)dummyMemoList;
+@property (strong, nonatomic, readonly, class) NSMutableArray* dummyMemoList;
 
 @end
 

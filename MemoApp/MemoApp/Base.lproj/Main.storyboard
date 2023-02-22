@@ -13,11 +13,11 @@
             <objects>
                 <viewController id="o90-fD-I4I" customClass="ComposeViewController" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qKb-RC-CIR">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Igk-UE-GNM">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <color key="textColor" systemColor="labelColor"/>
@@ -28,10 +28,11 @@
                         <viewLayoutGuide key="safeArea" id="XW0-40-1Ai"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="Igk-UE-GNM" firstAttribute="trailing" secondItem="XW0-40-1Ai" secondAttribute="trailing" id="5vD-VY-8kq"/>
-                            <constraint firstItem="Igk-UE-GNM" firstAttribute="bottom" secondItem="XW0-40-1Ai" secondAttribute="bottom" id="6Xo-aM-qsD"/>
-                            <constraint firstItem="Igk-UE-GNM" firstAttribute="leading" secondItem="XW0-40-1Ai" secondAttribute="leading" id="h5g-VF-8pB"/>
+                            <constraint firstItem="Igk-UE-GNM" firstAttribute="leading" secondItem="XW0-40-1Ai" secondAttribute="leading" id="5hx-ck-NCy"/>
+                            <constraint firstAttribute="bottom" secondItem="Igk-UE-GNM" secondAttribute="bottom" id="IEd-NA-G0I"/>
+                            <constraint firstItem="Igk-UE-GNM" firstAttribute="top" secondItem="qKb-RC-CIR" secondAttribute="top" id="LZ2-K3-y4F"/>
                             <constraint firstItem="Igk-UE-GNM" firstAttribute="top" secondItem="qKb-RC-CIR" secondAttribute="top" id="ulx-0b-W1h"/>
+                            <constraint firstItem="Igk-UE-GNM" firstAttribute="trailing" secondItem="XW0-40-1Ai" secondAttribute="trailing" id="zUM-hY-LYT"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="새 메모" id="2Zy-QA-hhW">
@@ -40,12 +41,19 @@
                                 <action selector="close:" destination="o90-fD-I4I" id="pN7-E5-xEm"/>
                             </connections>
                         </barButtonItem>
-                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="JXU-RY-0DK"/>
+                        <barButtonItem key="rightBarButtonItem" systemItem="save" id="JXU-RY-0DK">
+                            <connections>
+                                <action selector="save:" destination="o90-fD-I4I" id="IxD-F4-D7z"/>
+                            </connections>
+                        </barButtonItem>
                     </navigationItem>
+                    <connections>
+                        <outlet property="memoTextView" destination="Igk-UE-GNM" id="ejL-BQ-CIU"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="g35-Y5-Zrs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1459.4202898550725" y="-597.99107142857144"/>
+            <point key="canvasLocation" x="1614" y="-773"/>
         </scene>
         <!--Memo-->
         <scene sceneID="F7l-S9-e5h">
@@ -56,11 +64,11 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="memoListTableViewCell" textLabel="Cm0-wC-40C" detailTextLabel="WYG-IC-Uab" style="IBUITableViewCellStyleSubtitle" id="aWz-mZ-yxw">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="memoListTableViewCell" textLabel="Cm0-wC-40C" detailTextLabel="WYG-IC-Uab" style="IBUITableViewCellStyleSubtitle" id="aWz-mZ-yxw">
                                 <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="aWz-mZ-yxw" id="aYq-2c-6kq">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="385.5" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" insetsLayoutMarginsFromSafeArea="NO" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Cm0-wC-40C">
@@ -79,6 +87,9 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <segue destination="x7F-vu-wex" kind="show" id="MGz-gZ-dBT"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -89,7 +100,7 @@
                     <navigationItem key="navigationItem" title="Memo" id="bXm-qB-ihQ">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="b2j-JT-W3W">
                             <connections>
-                                <segue destination="Sn1-BC-jxF" kind="presentation" id="ADt-r6-Uf6"/>
+                                <segue destination="Sn1-BC-jxF" kind="presentation" modalPresentationStyle="fullScreen" id="ADt-r6-Uf6"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -97,6 +108,22 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ldY-lg-fkl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-253" y="53"/>
+        </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="vvh-6V-DnJ">
+            <objects>
+                <viewController id="x7F-vu-wex" customClass="DetailViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="4Z0-9o-zPZ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="OmP-ir-t2h"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="6hM-wk-Y08"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9e4-bN-bv8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="781" y="53"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="zjI-f2-xpw">
@@ -120,7 +147,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Sn1-BC-jxF" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="qxa-z0-z4R">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -130,7 +157,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Qvb-13-dVP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="547.82608695652175" y="-598.66071428571422"/>
+            <point key="canvasLocation" x="703" y="-774"/>
         </scene>
     </scenes>
     <resources>
