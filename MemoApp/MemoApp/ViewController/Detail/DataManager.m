@@ -1,39 +1,37 @@
 //
-//  AppDelegate.m
+//  DataManager.m
 //  MemoApp
 //
 //  Created by 오국원 on 2023/02/22.
 //
 
-#import "AppDelegate.h"
+#import "DataManager.h"
 
-@interface AppDelegate ()
+@implementation DataManager
 
-@end
-
-@implementation AppDelegate
-
-
-- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
-    return YES;
++ (instancetype)sharedInstance {
+    static DataManager* sharedInstance = nil;
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        sharedInstance = [[DataManager alloc] init];
+        sharedInstance.memoList = [[NSMutableArray alloc] init];
+    });
+    
+    return  sharedInstance;
 }
 
-
-#pragma mark - UISceneSession lifecycle
-
-
-- (UISceneConfiguration *)application:(UIApplication *)application configurationForConnectingSceneSession:(UISceneSession *)connectingSceneSession options:(UISceneConnectionOptions *)options {
-    // Called when a new scene session is being created.
-    // Use this method to select a configuration to create the new scene with.
-    return [[UISceneConfiguration alloc] initWithName:@"Default Configuration" sessionRole:connectingSceneSession.role];
+- (void)fetchMemo {
+    NSFetchRequest* request = [[NSFetchRequest alloc] initWithEntityName:@"Memo"];
+    NSSortDescriptor* sortByDateDesc = [NSSortDescriptor sortDescriptorWithKey:@"insertDate" ascending:NO];
+    request.sortDescriptors = @[sortByDateDesc];
+    
+    NSError* error = nil;
+    NSArray* result = [self.mainContext executeFetchRequest:request error:&error];
+    [self.memoList setArray:result];
 }
 
-
-- (void)application:(UIApplication *)application didDiscardSceneSessions:(NSSet<UISceneSession *> *)sceneSessions {
-    // Called when the user discards a scene session.
-    // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
-    // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
+- (NSManagedObjectContext*)mainContext {
+    return  self.persistentContainer.viewContext;
 }
 
 
