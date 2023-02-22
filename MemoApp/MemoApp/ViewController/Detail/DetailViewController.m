@@ -12,6 +12,7 @@
 
 @property (strong, nonatomic) NSDateFormatter* formatter;
 @property (weak, nonatomic) IBOutlet UITableView *memoTableView;
+- (IBAction)deleteMemo:(id)sender;
 
 @end
 
@@ -63,5 +64,21 @@
     // Pass the selected object to the new view controller.
 }
 */
+
+- (IBAction)deleteMemo:(id)sender {
+    UIAlertController* alert = [UIAlertController alertControllerWithTitle:@"삭제 확인" message:@"메모를 삭제할까요?" preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction* okAction = [UIAlertAction actionWithTitle:@"삭제" style:UIAlertActionStyleDestructive handler:^(UIAlertAction * _Nonnull action) {
+        
+    }];
+    UIAlertAction* cancelAction = [UIAlertAction actionWithTitle:@"취소" style:UIAlertActionStyleCancel handler:^(UIAlertAction * _Nonnull action) {
+        
+    }];
+    
+    [alert addAction:okAction];
+    [alert addAction:cancelAction];
+    
+    [self presentViewController:alert animated:YES completion:nil];
+}
 
 @end
