@@ -6,8 +6,11 @@
 //
 
 #import "MemoListTableViewController.h"
+#import "Memo.h"
 
 @interface MemoListTableViewController ()
+
+@property (strong, nonatomic) NSDateFormatter* formatter;
 
 @end
 
@@ -15,6 +18,11 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    
+    self.formatter = [[NSDateFormatter alloc] init];
+    self.formatter.dateStyle = NSDateFormatterLongStyle;
+    self.formatter.timeStyle = NSDateFormatterNoStyle;
+    self.formatter.locale = [NSLocale localeWithLocaleIdentifier:@"Ko_kr"];
     
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
@@ -25,25 +33,20 @@
 
 #pragma mark - Table view data source
 
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-#warning Incomplete implementation, return the number of sections
-    return 0;
-}
-
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-#warning Incomplete implementation, return the number of rows
-    return 0;
+    return [[Memo dummyMemoList] count];
 }
 
-/*
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"memoListTableViewCell" forIndexPath:indexPath];
     
-    // Configure the cell...
+    Memo* target = [[Memo dummyMemoList] objectAtIndex:indexPath.row];
+    cell.textLabel.text = target.content;
+    cell.detailTextLabel.text = [self.formatter stringFromDate:target.insertDate];
     
     return cell;
 }
-*/
+
 
 /*
 // Override to support conditional editing of the table view.
